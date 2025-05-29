@@ -1,0 +1,19 @@
+grafana:
+  enabled: true
+  adminPassword: supersecurepassword
+  service:
+    type: ClusterIP
+    port: 3000
+  ingress:
+    enabled: false
+
+prometheus:
+  prometheusSpec:
+    serviceMonitorSelectorNilUsesHelmValues: false
+
+kubeStateMetrics:
+  enabled: true
+
+nodeExporter:
+  enabled: true
+
