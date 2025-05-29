@@ -9,8 +9,7 @@ spec:
     repoURL: https://github.com/Mekaze99/k3s-home-lab.git 
     targetRevision: HEAD
     path: apps/monitoring
-    plugin:
-      name: kustomize
+    kustomize: {}
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
