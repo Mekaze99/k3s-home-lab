@@ -1,0 +1,6 @@
+resources:
+  - alertmanagers.monitoring.coreos.com.yaml
+  - podmonitors.monitoring.coreos.com.yaml
+  - prometheuses.monitoring.coreos.com.yaml
+  - prometheusrules.monitoring.coreos.com.yaml
+  - servicemonitors.monitoring.coreos.com.yaml
