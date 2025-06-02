@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/Mekaze99/k3s-home-lab.git 
-    targetRevision: HEAD
+    targetRevision: main 
     path: apps/monitoring
     chart: kube-prometheus-stack
     helm: 
