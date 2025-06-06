@@ -17,3 +17,9 @@ kubeStateMetrics:
 nodeExporter:
   enabled: true
 
+admissionWebhooks:
+  patch:
+    enabled: true
+    rbac:
+      create: false
+
