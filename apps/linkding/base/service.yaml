@@ -5,7 +5,7 @@ metadata:
   namespace: apps
 spec:
   selector:
-    app: likding
+    app: linkding
   ports:
     - protocol: TCP
       port: 80
