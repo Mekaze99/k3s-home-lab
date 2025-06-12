@@ -13,6 +13,9 @@ spec:
       labels:
         app: linkding
     spec:
+      securityContext:
+        runAsUser: 1000
+        runAsNonRoot: true
       containers:
       - name: linkding
         image: sissbruecker/linkding:latest
@@ -22,4 +25,10 @@ spec:
         - name: LD_SUPERUSER_NAME
           value: admin
         - name: LD_SUPERUSER_PASSWORD
-          value: admin123  
+          value: admin123
+      securityContext:
+        readOnlyRootFilesystem: true
+        allowPrivilageEscalation: false
+        privileged: false 
+        capabilities:
+          drop: ["ALL"]
