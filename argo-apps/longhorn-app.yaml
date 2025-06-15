@@ -9,11 +9,13 @@ spec:
     repoURL: https://github.com/Mekaze99/k3s-home-lab.git
     targetRevision: HEAD
     path: apps/longhorn
-    helm:
-      chart: longhorn
-      repoURL: https://charts.rancher.io
-      valueFiles:
-        - values.yaml
+    directory:
+      recurse: true
+      helm:
+        chart: longhorn
+        repoURL: https://charts.rancher.io
+        valueFiles:
+          - values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: longhorn-system
