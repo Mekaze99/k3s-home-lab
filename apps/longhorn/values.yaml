@@ -1,0 +1,8 @@
+persistence:
+  defaultClass: true
+  defaultClassReplicaCount: 1
+
+defaultSettings:
+  defaultReplicaCount: 1
+  replicaAutoBalance: disabled 
+
