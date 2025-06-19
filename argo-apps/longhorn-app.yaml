@@ -14,9 +14,10 @@ spec:
         - values.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: infrastructure 
+    namespace: longhorn-system 
   syncPolicy:
     automated:
       selfHeal: true
       prune: true
-
+    syncOptions:
+      - CreateNamespace=true
