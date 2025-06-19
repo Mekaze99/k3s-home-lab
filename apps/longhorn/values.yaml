@@ -5,4 +5,5 @@ persistence:
 defaultSettings:
   defaultReplicaCount: 1
   replicaAutoBalance: disabled 
-
+networkPolicies:
+  enabled: false
