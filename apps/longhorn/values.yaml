@@ -22,3 +22,7 @@ image:
   longhorn:
     manager:
       repository: "longhornio/longhorn-manager"
+
+longhornManager:
+  priorityClass: ""
+
