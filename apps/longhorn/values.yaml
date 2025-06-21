@@ -13,3 +13,7 @@ privateRegistry:
   registryUrl: ""
   user: ""
   password: ""
+
+global:
+  cattle:
+    systemDefaultRegistry: ""
