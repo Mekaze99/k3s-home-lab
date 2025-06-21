@@ -17,3 +17,8 @@ privateRegistry:
 global:
   cattle:
     systemDefaultRegistry: ""
+
+image:
+  longhorn:
+    manager:
+      repository: "longhornio/longhorn-manager"
