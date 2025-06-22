@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/twoj-login/k3s-home-lab.git
+    repoURL: https://github.com/Mekaze99/k3s-home-lab.git 
     targetRevision: HEAD
     path: apps/longhorn
   destination:
