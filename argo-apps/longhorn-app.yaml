@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://charts.longhorn.io
     chart: longhorn 
-    targetRevision: 106.2.0+up1.8.1 
+    targetRevision: 1.9.0 
     path: apps/longhorn
     sourceRef:
       repoURL: https://github.com/twoj-login/k3s-home-lab.git
