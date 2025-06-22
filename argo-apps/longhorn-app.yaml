@@ -15,7 +15,7 @@ spec:
       targetRevision: HEAD
     helm:
       valueFiles:
-        - values.yaml
+        - apps/longhorn/values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: longhorn-system 
