@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: linkding-data
-  namespace: linkding
+  namespace: apps 
 spec:
   accessModes:
     - ReadWriteOnce
