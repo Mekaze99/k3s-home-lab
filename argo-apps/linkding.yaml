@@ -9,6 +9,8 @@ spec:
     repoURL: https://github.com/Mekaze99/k3s-home-lab.git 
     targetRevision: HEAD
     path: apps/linkding
+    directory:
+      recurse: true
   destination:
     server: https://kubernetes.default.svc
     namespace: apps 
