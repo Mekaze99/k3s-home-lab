@@ -8,8 +8,7 @@ spec:
   source:
     repoURL: https://github.com/Mekaze99/k3s-home-lab.git 
     targetRevision: HEAD
-    path: apps/linkding/overlays
-    kustomize: {}
+    path: apps/linkding
   destination:
     server: https://kubernetes.default.svc
     namespace: apps 
