@@ -26,6 +26,12 @@ spec:
           value: admin
         - name: LD_SUPERUSER_PASSWORD
           value: admin123
+        securityContext:
+          readOnlyRootFilesystem: true
+          allowPrivilegeEscalation: false
+          privileged: false 
+          capabilities:
+            drop: ["ALL"]
         volumeMounts:
         - mountPath: /etc/linkding/data
           name: linkding-storage
@@ -33,9 +39,3 @@ spec:
         - name: linkding-storage
           persistentVolumeClaim:
             claimName: likding-data
-      securityContext:
-        readOnlyRootFilesystem: true
-        allowPrivilageEscalation: false
-        privileged: false 
-        capabilities:
-          drop: ["ALL"]
