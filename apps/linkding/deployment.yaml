@@ -38,4 +38,4 @@ spec:
       volumes:
         - name: linkding-storage
           persistentVolumeClaim:
-            claimName: likding-data
+            claimName: linkding-data
