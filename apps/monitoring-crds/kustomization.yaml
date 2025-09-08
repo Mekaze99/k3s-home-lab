@@ -1,6 +1,0 @@
-resources:
-  - crd-alertmanagers.yaml
-  - crd-podmonitors.yaml
-  - crd-prometheuses.yaml
-  - crd-prometheusrules.yaml
-  - crd-servicemonitors.yaml
