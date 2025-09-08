@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: linkding
-  namespace: argocd
+  namespace: apps 
 spec:
   project: default
   source:
