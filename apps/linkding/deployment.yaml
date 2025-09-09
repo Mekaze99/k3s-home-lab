@@ -35,7 +35,11 @@ spec:
         volumeMounts:
         - mountPath: /etc/linkding/data
           name: linkding-storage
+        - mountPath: /tmp
+          name: tmp
       volumes:
         - name: linkding-storage
           persistentVolumeClaim:
             claimName: linkding-data
+        - name: tmp
+          emptyDir: {}
