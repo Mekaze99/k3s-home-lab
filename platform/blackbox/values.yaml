@@ -1,0 +1,12 @@
+resources:
+  requests: { cpu: "25m", memory: "40Mi" }
+  limits:   { cpu: "150m", memory: "96Mi" }
+
+config:
+  modules:
+    http_2xx:
+      prober: http
+      timeout: 5s
+      http:
+        method: GET
+        preferred_ip_protocol: "ip4"
