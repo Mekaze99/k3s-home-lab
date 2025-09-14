@@ -9,11 +9,15 @@ spec:
     server: https://kubernetes.default.svc
     namespace: monitoring
   source:
-    repoURL: https://prometheus-community.github.io/helm-charts
+  - repoURL: https://prometheus-community.github.io/helm-charts
     chart: prometheus-blackbox-exporter
     targetRevision: 9.*
     helm:
       valueFiles:
-        - values-blackbox.yaml
+        - $values/values-blackbox.yaml
+  - repoURL: https://github.com/Mekaze99/k3s-home-lab.git
+    targetRevision: main
+    ref: values
+
   syncPolicy:
     automated: { prune: true, selfHeal: true }
