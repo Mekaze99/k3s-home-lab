@@ -33,6 +33,8 @@ alertmanager:
       group_wait: 30s
       group_interval: 5m
       repeat_interval: 3h
+    receivers:
+      - name: default
 
 kube-state-metrics:
   resources:
@@ -47,7 +49,7 @@ nodeExporter:
 grafana:
   enabled: true
   adminUser: admin
-  adminPassword: admin   # na start; docelowo sekret przez SOPS
+  adminPassword: admin
   sidecar:
     dashboards:
       enabled: true

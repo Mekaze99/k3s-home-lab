@@ -1,22 +1,21 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: linkdink-ingress
-  namespace: apps 
+  name: kube-prometheus-stack-grafana-ingress
+  namespace: monitoring 
   annotations:
     traefik.ingress.kubernetes.io/router.entrypoints: web
     traefik.ingress.kubernetes.io/service.scheme: https
 spec:
-  ingressClassName: traefik   # lub nginx – zależnie czego używasz
+  ingressClassName: traefik   
   rules:
-    - host: link.n8nbyczkuuu.xyz
+    - host: grafana.n8nbyczkuuu.xyz
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: linkding
+                name: kube-prometheus-stack-grafana
                 port:
                   number: 80
-
