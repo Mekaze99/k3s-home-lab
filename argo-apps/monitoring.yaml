@@ -8,13 +8,16 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
-  source:
-    repoURL: https://prometheus-community.github.io/helm-charts
+  sources:
+  - repoURL: https://prometheus-community.github.io/helm-charts
     chart: kube-prometheus-stack
     targetRevision: 76.6.2           
     helm:
       valueFiles:
-        - ../../platform/monitoring/values-rpi.yaml
+        - $values/platform/monitoring/values-rpi.yaml
+  - repoURL: https://github.com/Mekaze99/k3s-home-lab.git
+    targetRevision: main
+    ref: values
   syncPolicy:
     automated:
       prune: true
