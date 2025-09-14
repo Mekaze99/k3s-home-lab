@@ -8,13 +8,13 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
-  source:
+  sources:
   - repoURL: https://prometheus-community.github.io/helm-charts
     chart: prometheus-blackbox-exporter
     targetRevision: 9.*
     helm:
       valueFiles:
-        - $values/values-blackbox.yaml
+        - $values/argo-apps/values-blackbox.yaml
   - repoURL: https://github.com/Mekaze99/k3s-home-lab.git
     targetRevision: main
     ref: values
