@@ -18,6 +18,12 @@ spec:
   - repoURL: https://github.com/Mekaze99/k3s-home-lab.git
     targetRevision: main
     ref: values
+  - repoURL: https://github.com/Mekaze99/k3s-home-lab.git
+    targetRevision: main
+    path: platform/monitoring
+    directory:
+      recurse: false
+      exclude: values-*.yaml
   syncPolicy:
     automated:
       prune: true
