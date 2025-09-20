@@ -1,0 +1,45 @@
+# argo-apps/kyverno.yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kyverno
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kyverno
+  source:
+    repoURL: https://kyverno.github.io/kyverno/
+    chart: kyverno
+    targetRevision: 3.5.2
+    helm:
+      values: |
+        installCRDs: true
+        replicaCount: 1
+        resources:
+          requests: { cpu: "40m", memory: "64Mi" }
+          limits:   { cpu: "120m", memory: "128Mi" }
+
+        admissionController:
+          resources:
+            requests: { cpu: "60m", memory: "96Mi" }
+            limits:   { cpu: "180m", memory: "160Mi" }
+
+        backgroundController:
+          resources:
+            requests: { cpu: "30m", memory: "64Mi" }
+            limits:   { cpu: "100m", memory: "128Mi" }
+
+        reportsController:
+          resources:
+            requests: { cpu: "20m", memory: "48Mi" }
+            limits:   { cpu: "80m",  memory: "96Mi" }
+
+        metricsServiceMonitor:
+          enabled: false 
+  project: default
+  syncPolicy:
+    automated: { prune: true, selfHeal: true }
+    syncOptions: [CreateNamespace=true]
