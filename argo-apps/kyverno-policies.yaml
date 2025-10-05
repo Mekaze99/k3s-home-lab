@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: "0"
-     argocd.argoproj.io/compare-options: ServerSideDiff=true,IncludeMutationWebhook=true
+    argocd.argoproj.io/compare-options: ServerSideDiff=true,IncludeMutationWebhook=true
 spec:
   project: default
   destination:
@@ -18,6 +18,9 @@ spec:
     automated:
       prune: true
       selfHeal: true
+  syncOptions:
+      - ServerSideApply=true
+      - ApplyOutOfSyncOnly=true 
   ignoreDifferences:
   - group: kyverno.io
     kind: ClusterPolicy
@@ -31,6 +34,3 @@ spec:
       - .spec.rules[].skipBackgroundRequests
       - .spec.rules[].validate.allowExistingViolations
       - .spec.rules[] | select(.name | startswith("autogen-"))
-    syncOptions:
-      - ServerSideApply=true
-      - ApplyOutOfSyncOnly=true
