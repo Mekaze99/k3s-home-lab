@@ -18,7 +18,7 @@ spec:
         runAsNonRoot: true
       containers:
       - name: linkding
-        image: sissbruecker/linkding:1.42.0
+        image: sissbruecker/linkding:latest
         ports:
         - containerPort: 9090
         env:
