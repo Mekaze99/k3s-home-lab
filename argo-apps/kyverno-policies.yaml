@@ -17,6 +17,19 @@ spec:
     automated:
       prune: true
       selfHeal: true
+  ignoreDifferences:
+  - group: kyverno.io
+    kind: ClusterPolicy
+    jqPathExpressions:
+      - .spec.rules[].skipBackgroundRequests
+      - .spec.rules[].validate.allowExistingViolations
+      - .spec.rules[] | select(.name | startswith("autogen-"))
+  - group: kyverno.io
+    kind: Policy
+    jqPathExpressions:
+      - .spec.rules[].skipBackgroundRequests
+      - .spec.rules[].validate.allowExistingViolations
+      - .spec.rules[] | select(.name | startswith("autogen-"))
     syncOptions:
       - ServerSideApply=true
       - ApplyOutOfSyncOnly=true
