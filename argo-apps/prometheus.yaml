@@ -8,12 +8,12 @@ spec:
   source:
     repoURL: https://github.com/Mekaze99/k3s-home-lab.git 
     targetRevision: HEAD
-    path: platform/prometheus-test
+    path: platform/prometheus-test 
     directory:
       recurse: true
   destination:
     server: https://kubernetes.default.svc
-    namespace: apps 
+    namespace: monitoring 
   syncPolicy:
     automated:
       prune: true
